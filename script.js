@@ -1,40 +1,31 @@
 'strict mode';
 
-let dauphins1 = [96, 108, 89];
-let koalas1 = [88, 91, 110];
+let dauphins1 = [44, 23, 71];
+let koalas1 = [65, 54, 49];
 
-let dauphins2 = [97, 112, 101];
-let koalas2 = [109, 95, 123];
+let dauphins2 = [85, 54, 41];
+let koalas2 = [23, 34, 27];
 
-let dauphins3 = [97, 112, 101];
-let koalas3 = [109, 95, 106];
-
-
-function average (score) {
+function calcAverage (score) {
     let totalscore = score.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
     let cbscore = score.length;
     return parseFloat(totalscore / cbscore).toFixed(2);
 };
 
 
-function winner (dauphins, koalas) {
-    if ((average(dauphins) || average(koalas)) > 100) {
-        if (average(koalas) < average(dauphins)) {
-            return "Les Dauphins espiegle gagnent avec une moyenne de " + average(dauphins) + " contre seulement" + average(koalas) + " pour les Koalas les nuls";
-        } else if (average(dauphins) < average(koalas)){
-            return "Les Koalas trop fort gagnent avec une moyenne de " + average(koalas) + " contre une moyenne de " + average(dauphins) + " pour les Dauphins case prison";
-        } else {
-            return "Egalité impossible de les départager zut " + average(dauphins);
-        }
-    } else {
-        return "tous nul" + " dauphins : " + average(dauphins) + " kaoala : " + average(koalas);
-    }
+function checkWinner (dauphins, koalas) {
+    if (calcAverage(dauphins) > (calcAverage(koalas)*2)){
+        return "Les Dauphins espiegle gagnent " + calcAverage(dauphins) + " VS " + calcAverage(koalas) ;
+
+    } else if ((calcAverage(dauphins)*2) < calcAverage(koalas)) {
+        return "Les Koalas qui sentent bon grace a l'eucaliptus gagnent " + calcAverage(koalas) + " VS " + calcAverage(dauphins);
+    } 
+    else {
+    return "persone gagne"
+    }  
+
 }
 
-console.log(winner(dauphins1, koalas1));
-console.log(winner(dauphins2, koalas2));
-console.log(winner(dauphins3, koalas3));
 
-
-
-
+console.log(checkWinner(dauphins1, koalas1));
+console.log(checkWinner(dauphins2, koalas2));
