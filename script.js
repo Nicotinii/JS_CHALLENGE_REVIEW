@@ -1,23 +1,27 @@
 'strict mode';
 
+function calcTip (facture) {
+    if (facture >= 50 && facture <= 300) {
+        return facture * 0.15;
+    } else {
+        return facture * 0.20;
+    }
+}
+console.log(calcTip (555))
 
-function bill(facture) {
+const bills = [125, 555, 44];
 
-let tips = 0;
+let tips = [];
 
-(50 <= facture <= 300) ? tips = 0.15 * facture : tips = 0.20 * facture
+for (let i = 0; i < bills.length; i++) {
+    tips.push(calcTip(bills[i]));
+}
+console.log(tips);
 
-let total = facture + tips;
+let totals = [];
 
-return "La note est de " + facture + " le pourboire est de " + tips + " et la valeur totale était de " + total;
-
+for (let i = 0; i < bills.length; i++) {
+    totals.push(calcTip(bills[i]) + bills[i]);
 }
 
-
-console.log(bill(275));
-console.log(bill(40));
-console.log(bill(430));
-
-
-
-
+console.log(totals);
