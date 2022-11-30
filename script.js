@@ -1,35 +1,33 @@
 'strict mode';
 
-function calcTip (facture) {
-    if (facture >= 50 && facture <= 300) {
-        return facture * 0.15;
-    } else {
-        return facture * 0.20;
+// Welcome to DonkeyDecode, your mission is to decode the full message. Good luck
+
+// EX 01 -  Use a loop to remove the 'X' and use console.log to reveal the message 
+const hiddenMessage = ["X", "X", "X", "X", "W", "X", "E",  "X", "X", "X", "X", "X", "L", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "L", "X", "X", "X", "X", "X", "X", "X", "X", "X", " ","X", "X", "X", "X", "X", "X", "X", "X", "D", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "O", "X", "X", "X", "X", "X", "X", "N", "X", "X", "X", "X", "E", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", ",", "X", " ", "X"]
+
+// Your code goes here
+
+for (let i = 0; i < hiddenMessage.length; i++) {
+  if ((hiddenMessage[i] === "X")) {
+    delete hiddenMessage[i];
+  }
+}
+console.log(hiddenMessage.join('')); //WELL DONE, 
+
+
+// EX 02 - Remove the 'X' and the even numbers
+// Hint: As this is a string you should find a way to convert into an array.
+
+const hiddenCode = "XXXXXXXXXXXXXXXXXXXXXXXXXXXCXXXXXXXOXXXXXDXXXXXXXXXXXXXXXEXXXX XXXXXXXXXXXXXXX:X0XXXXXXX2XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX3XXXXXX2XXXXXXXXX2XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX4XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX6XXXXXXXXXXXXXXX6XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX7XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX2XXXXXXXXXX8XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX8XXXXXXXXXXX4XXXXXXXXXXXX6XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX4XXXXXXXXXXXXXXXXXXX9XXXX9XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX2XXX4XXXXXXXXXXX6XXXXXXXXX2XXXXXXXX3XXXXXXXX2XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX4XXXXX"
+
+// Your code goes here
+
+const hiddenCodeArray = hiddenCode.split('X');
+
+for (let i = 0; i < hiddenCodeArray.length; i++) {
+    if ((hiddenCodeArray[i] === "X")) {
+      delete hiddenCodeArray[i];
     }
-}
+  }
 
-const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]; //[4.4, 44.25, 26.4, 88, 7.4, 15.75, 2, 220, 12.9, 7.8]
-
-let tips = [];
-
-for (let i = 0; i < bills.length; i++) {
-    tips.push(calcTip(bills[i]));
-}
-console.log(tips);
-
-let totals = [];
-
-for (let i = 0; i < bills.length; i++) {
-    totals.push(calcTip(bills[i]) + bills[i]);
-}
-console.log(totals); //[26.4, 339.25, 202.4, 528, 44.4, 120.75, 12, 1320, 98.9, 59.8]
-
-function calcAverage(tab){
-    let tableau = tab.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-    return tableau / tab.length;
-}
-console.log(calcAverage(totals)); // 275.19
-
-
-
-
+  console.log(hiddenCodeArray.join('')); //CODE :023224667288464992462324
