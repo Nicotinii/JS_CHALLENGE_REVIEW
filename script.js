@@ -1,74 +1,67 @@
 'strict mode';
 
-let BernardA = {
+let people1= {
+    name: 'Bernard',
     weight: 78,
-    height: 1.69
+    height: 1.69,
+    calcBMI: function () {
+        return parseFloat(this.weight / (this.height * this.height)).toFixed(2); 
+    }
 };
 
-let MarcelA = {
+
+
+let people2= {
+    name: "Marcel",
     weight: 92,
-    height: 1.95
+    height: 1.95,
+    calcBMI: function () {
+        return parseFloat(this.weight / (this.height * this.height)).toFixed(2); 
+    }
 };
 
-let BernardB = {
+let people3 = {
+    name: "Bertrand",
     weight: 95,
-    height: 1.88
+    height: 1.88,
+    calcBMI: function () {
+        return parseFloat(this.weight / (this.height * this.height)).toFixed(2); 
+    }
 };
 
-let MarcelB = {
+let people4 = {
+    name: "Marcelino",
     weight: 85,
-    height: 1.76
+    height: 1.76,
+    calcBMI: function () {
+        return parseFloat(this.weight / (this.height * this.height)).toFixed(2); 
+    }
 };
 
-function imc (weight, height) {
-    return (weight / (height * height)).toFixed(2);
-};
+people1.imc=people1.calcBMI();
+people2.imc=people2.calcBMI();
+people3.imc=people3.calcBMI();
+people4.imc=people4.calcBMI();
+console.log(people1.calcBMI());
+console.log(people2.calcBMI());
+console.log(people3.calcBMI());
+console.log(people4.calcBMI());
 
-let imcBernardA = imc(BernardA.weight, BernardA.height);
-let imcMarcelA = imc(MarcelA.weight, MarcelA.height);
-
-let imcBernardB = imc(BernardB.weight, BernardB.height);
-let imcMarcelB = imc(MarcelB.weight, MarcelB.height);
-
-let messageA = "";
-let messageB = "";
-
-if (imcBernardA > imcMarcelA) {
-    messageA = "Bernard a un IMC(" + imcBernardA + ") plus élevé que Marcel(" + imcMarcelA + ").";
-} else {
-    messageA = "Marcel a un IMC(" + imcMarcelA + ") plus élevé que Bernard(" + imcBernardA + ").";
-}
-
-if (imcBernardB > imcMarcelB) {
-    messageB = "Bernard a un IMC(" + imcBernardB + ") plus élevé que Marcel(" + imcMarcelB + ").";
-} else {
-    messageB = "Marcel a un IMC(" + imcMarcelB + ") plus élevé que Bernard(" + imcBernardB + ").";
-}
-
-console.log(messageA); //Bernard a un IMC(27.31) plus élevé que Marcel(24.19).
-console.log(messageB); //Marcel a un IMC(27.44) plus élevé que Bernard(26.88).
+let message=" "
 
 
+function compare(man1, man2){
+    if (man1.imc > man2.imc){
+        return message= "L’IMC de " + man1.name + " (" + man1.imc + ") est plus élevé que celui de " + man2.name + " (" + man2.imc + ")"
 
-
-function imcMessage (nivea) {
-    if (imc(nivea.weight, nivea.height) <20) {
-        return "Insuffisance pondérale";
-    } else if (imc(nivea.weight, nivea.height) <25) {
-        return "Normal";
-    } else if (imc(nivea.weight, nivea.height) <30) {
-        return "Surpoids";
-    } else if (imc(nivea.weight, nivea.height) <40) {
-        return "Obésité";
-    } else {
-        return "Obésité importante";
+    }else{
+        return message=  "L’IMC de " + man2.name + " (" + man2.imc + ") est plus élevé que celui de " + man1.name + " (" + man1.imc + ")"
     }
 }
 
-console.log(imcMessage(BernardA)); //Surpoids
-console.log(imcMessage(MarcelA)); //Normal
-console.log(imcMessage(BernardB));//Surpoids
-console.log(imcMessage(MarcelB));//Surpoids
+
+console.log(compare(people1, people2)); //L’IMC de Bernard (27.31) est plus élevé que celui de Marcel (24.19)
+console.log(compare(people3, people4)); //L’IMC de Marcelino (27.44) est plus élevé que celui de Bertrand (26.88)
 
 
 
