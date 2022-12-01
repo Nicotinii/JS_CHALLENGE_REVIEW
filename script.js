@@ -5,7 +5,7 @@ let people1= {
     weight: 78,
     height: 1.69,
     calcBMI: function () {
-        return parseFloat(this.weight / (this.height * this.height)).toFixed(2); 
+        return (this.weight / (this.height * this.height)).toFixed(2); 
     }
 };
 
@@ -16,7 +16,7 @@ let people2= {
     weight: 92,
     height: 1.95,
     calcBMI: function () {
-        return parseFloat(this.weight / (this.height * this.height)).toFixed(2); 
+        return (this.weight / (this.height * this.height)).toFixed(2); 
     }
 };
 
@@ -25,7 +25,7 @@ let people3 = {
     weight: 95,
     height: 1.88,
     calcBMI: function () {
-        return parseFloat(this.weight / (this.height * this.height)).toFixed(2); 
+        return (this.weight / (this.height * this.height)).toFixed(2); 
     }
 };
 
@@ -34,7 +34,7 @@ let people4 = {
     weight: 85,
     height: 1.76,
     calcBMI: function () {
-        return parseFloat(this.weight / (this.height * this.height)).toFixed(2); 
+        return (this.weight / (this.height * this.height)).toFixed(2); 
     }
 };
 
