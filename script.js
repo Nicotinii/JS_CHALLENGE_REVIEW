@@ -1,15 +1,68 @@
 "strict mode";
 
-let tempmax1 = [17, 21, 23];
-let tempmax2 = [12, 5, -5, 0, 4];
+const game = {
+    team1: 'Bayern Munich',
+    team2: 'Borrussia Dortmund',
+    players: [
+      [
+        'Neuer',
+        'Pavard',
+        'Martinez',
+        'Alaba',
+        'Davies',
+        'Kimmich',
+        'Goretzka',
+        'Coman',
+        'Muller',
+        'Gnarby',
+        'Lewandowski',
+      ],
+      [
+        'Burki',
+        'Schulz',
+        'Hummels',
+        'Akanji',
+        'Hakimi',
+        'Weigl',
+        'Witsel',
+        'Hazard',
+        'Brandt',
+        'Sancho',
+        'Gotze',
+      ],
+    ],
+    score: '4:0',
+    scored: ['Lewandowski', 'Gnarby', 'Lewandowski','Hummels'],
+    date: 'Nov 9th, 2037',
+    odds: {
+      team1: 1.33,
+      x: 3.25,
+      team2: 6.5,
+    },
+  };
 
-function tempall (quecalor) {
-    for (let i=0; i<quecalor.length; i++) {
+const players1 = game.players[0];
+const players2 = game.players[1];
+console.log(players1);
+console.log(players2);
 
-        console.log(quecalor[i] + " degrée dans "  + (i + 1) + " jour" );
+const gk = players1[0];
+const array = [];
+const fieldPlayers = array.concat(players1);
+fieldPlayers.shift();
+console.log(gk);
+console.log(fieldPlayers);
 
-    }
-}
+const allPlayers = players1.concat(players2);
+console.log(allPlayers);
 
-tempall(tempmax1);
-tempall(tempmax2);
+const players1Final = players1.concat(['Thiago', 'Coutinho', 'Perisic'])
+console.log(players1Final);
+
+let team1 = game.odds.team1;
+let team2 = game.odds.team2;
+let draw = game.odds.x;
+console.log(team1);
+console.log(team2);
+console.log(draw);
+
