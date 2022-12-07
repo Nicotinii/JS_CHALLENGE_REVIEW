@@ -54,7 +54,7 @@ console.log(gk);
 console.log(fieldPlayers);
 
 const allPlayers = players1.concat(players2);
-console.log(allPlayers);
+console.log(allPlayers);  
 
 const players1Final = players1.concat(['Thiago', 'Coutinho', 'Perisic'])
 console.log(players1Final);
