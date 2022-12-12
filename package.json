@@ -1,0 +1,22 @@
+{
+  "name": "js_challenge_review",
+  "version": "1.0.0",
+  "description": "| CHALLENGE     | DESCRIPTION                                                                                        |\r | ------------- | ---------------------------------------------------------------------------------------------------|\r | CHALL 1       | [Les variables](https://github.com/Nicotinii/JS_CHALLENGE_REVIEW/tree/JS_CHALL1)                                |\r | CHALL 2       | [Incrémentation](https://github.com/Nicotinii/JS_CHALLENGE_REVIEW/tree/JS_CHALL2) |\r | CHALL 3       | [calcul d’IMC](https://github.com/Nicotinii/JS_CHALLENGE_REVIEW/tree/JS_CHALL3)            |\r | CHALL 4       | [compétition de gymnastique](https://github.com/Nicotinii/JS_CHALLENGE_REVIEW/tree/JS_CHALL4)          |\r | CHALL 5       | [tip calculator](https://github.com/Nicotinii/JS_CHALLENGE_REVIEW/tree/JS_CHALL5)            |\r | CHALL 6       | [compétition de gymnastique, le retour](https://github.com/Nicotinii/JS_CHALLENGE_REVIEW/tree/JS_CHALL6)            |\r | CHALL 7       | [tip calculator 2](https://github.com/Nicotinii/JS_CHALLENGE_REVIEW/tree/JS_CHALL7)                                |\r | CHALL 8       | [tip calculator 3.0](https://github.com/Nicotinii/JS_CHALLENGE_REVIEW/tree/JS_CHALL8) |\r | CHALL 9       | [Décode le message](https://github.com/Nicotinii/JS_CHALLENGE_REVIEW/tree/JS_CHALL9)            |\r | CHALL 10      | [array astrology](https://github.com/Nicotinii/JS_CHALLENGE_REVIEW/tree/JS_CHALL10)          |\r | CHALL 11      | [calcul d’IMC 2](https://github.com/Nicotinii/JS_CHALLENGE_REVIEW/tree/JS_CHALL11)            |\r | CHALL 12      | [Evelyn Deliapp](https://github.com/Nicotinii/JS_CHALLENGE_REVIEW/tree/JS_CHALL12)            |\r | CHALL 13      | [football app](https://github.com/Nicotinii/JS_CHALLENGE_REVIEW/tree/JS_CHALL13)            |\r | SuperChallenge1| [Adopt a cat](https://guthib.com)            |",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nicotinii/JS_CHALLENGE_REVIEW.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nicotinii/JS_CHALLENGE_REVIEW/issues"
+  },
+  "homepage": "https://github.com/Nicotinii/JS_CHALLENGE_REVIEW#readme",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
+}
