@@ -1,0 +1,128 @@
+const pokeCenter: HTMLElement = document.querySelector(".poke-center")!;
+
+// let webAnim: Animation | null;
+
+
+class Pokemon {
+    private name: String;
+    private picture: string;
+    private health: number = 10;
+    private maxHealth: number = 100;
+    private lifeBarContainer?: HTMLElement;
+    private currentLifeBar?: HTMLElement;
+    private card?: HTMLElement;
+
+    public drowPokemon() {
+        const cards = document.createElement("div");
+        cards.classList.add("cards-" + this.name);
+        pokeCenter.appendChild(cards);
+
+        const card = document.createElement("div");
+        card.classList.add("card");
+        cards.appendChild(card);
+        this.card = card;
+
+        const cardHeader = document.createElement("div");
+        cardHeader.classList.add("card-header");
+        card.appendChild(cardHeader);
+
+        const cardImg = document.createElement("div");
+        cardImg.style.backgroundImage = `url(${this.picture})`;
+        cardImg.classList.add("card-img");
+        cardHeader.appendChild(cardImg);
+
+        const cardBody = document.createElement("div");
+        cardBody.classList.add("card-body");
+        card.appendChild(cardBody);
+
+        const cardTitle = document.createElement("h2");
+        cardTitle.classList.add("card-title");
+        cardTitle.innerHTML = cardTitle.innerHTML + this.name;
+        cardBody.appendChild(cardTitle);
+
+        const cardButton = document.createElement("button");
+        cardButton.classList.add("card-button");
+        cardButton.innerHTML = cardButton.innerHTML + 'Heal Now';
+        cardButton.addEventListener("click", this.fullHeal);
+        cardBody.appendChild(cardButton);
+
+        const lifeBarContainer = document.createElement("div");
+        lifeBarContainer.classList.add("life-bar-container");
+        cardButton.appendChild(lifeBarContainer);
+        this.lifeBarContainer = lifeBarContainer;
+
+        const currentLifeBar = document.createElement("div");
+        currentLifeBar.classList.add("current-life-bar");
+        currentLifeBar.style.width = this.health + "%";
+        lifeBarContainer.appendChild(currentLifeBar);
+        this.currentLifeBar = currentLifeBar;
+    }
+
+
+    constructor(name: string, picture: string) {
+        this.name = name;
+        this.picture = picture;
+    }
+    private heal = (value: number) => {
+        let lifeRegen = value;
+        if (!this.currentLifeBar || !this.card) return;
+        if (this.health + lifeRegen > this.maxHealth) {
+            this.health = this.maxHealth;
+            this.currentLifeBar.style.width = `${this.health}%`;
+        }
+        this.health += lifeRegen;
+        this.currentLifeBar.style.width = this.health + "%";
+        this.card.classList.add("twinkling");
+        setTimeout(() => {
+            if (!this.card) return;
+            this.card.classList.remove("twinkling");
+        }, 1000)
+        this.checkLifeAlert();
+    }
+
+    fullHeal = () => {
+        this.heal(100);
+    }
+
+    checkLifeAlert() {
+        if (this.card) {
+            this.card.classList.remove("alertLowLife");
+            if (this.health < 15) {
+                this.card.classList.add("alertLowLife");
+            }
+        }
+    }
+
+}
+
+const gengar = new Pokemon("Gengar", "https://www.pokepedia.fr/images/8/8d/Ectoplasma-RFVF.png?20200407165210");
+const dragonite = new Pokemon("Dragonite", "https://www.pokepedia.fr/images/8/87/Dracolosse-RFVF.png?20200407175010");
+const machamp = new Pokemon("Machamp", "https://www.pokepedia.fr/images/e/ee/Mackogneur-RFVF.png?20200407163300");
+const alakazam = new Pokemon("Alakazam", "https://www.pokepedia.fr/images/6/68/Alakazam-RFVF.png?20200407175447");
+const articuno = new Pokemon("Articuno", "https://www.pokepedia.fr/images/thumb/b/bb/Artikodin-RFVF.png/1058px-Artikodin-RFVF.png?20160813171115");
+const blastoise = new Pokemon("Blastoise", "https://www.pokepedia.fr/images/thumb/2/24/Tortank-RFVF.png/1104px-Tortank-RFVF.png?20141019190013");
+
+
+let myTeam = [gengar, dragonite, machamp, alakazam, articuno, blastoise];
+
+
+
+myTeam.forEach(pokemon => {
+    pokemon.drowPokemon();
+});
+
+
+
+
+function healAll() {
+    myTeam.forEach(pokemon => {
+        pokemon.fullHeal();
+    });
+}
+
+// FIGHT START > TOGGLE > DISPLAY TEAM
+// FIGHT > Health diminution
+// HEAL
+
+
+

@@ -1,29 +1,40 @@
 const cards: HTMLElement = document.querySelector(".cards")!;
 
-const animalsToAdopt = [
+
+
+const MyPokemon = [
     {
-        name: "Lucky",
-        picture: "https://placekitten.com/200/287"
+        name: "Métamorph",
+        picture: "https://www.pokepedia.fr/images/thumb/e/e3/M%C3%A9tamorph-RFVF.png/250px-M%C3%A9tamorph-RFVF.png",
     },
     {
-        name: "Symba",
-        picture: "https://placekitten.com/200/139"
+        name: "Ectoplasma",
+        picture: "https://www.pokepedia.fr/images/thumb/8/8d/Ectoplasma-RFVF.png/250px-Ectoplasma-RFVF.png",
     },
     {
-        name: "Léo",
-        picture: "https://placekitten.com/200/90"
+        name: "Dracaufeu",
+        picture: "https://www.pokepedia.fr/images/archive/1/17/20141016141812%21Dracaufeu-RFVF.png",
     },
     {
-        name: "Milo",
-        picture: "https://placekitten.com/200/194"
+        name: "Pachirisu",
+        picture: "https://www.media.pokekalos.fr/img/pokemon/home/shiny/pachirisu.png",
     },
     {
-        name: "Charly",
-        picture: "https://placekitten.com/200/179"
+        name: "Rayquaza",
+        picture: "https://www.pokepedia.fr/images/thumb/1/1a/Rayquaza-DEPS.png/250px-Rayquaza-DEPS.png",
+    },
+    {
+        name: "Volcaropod",
+        picture: "https://www.pokepedia.fr/images/thumb/8/85/Volcaropod-HGSS.png/250px-Volcaropod-HGSS.png",
     }
 ];
 
-function createCard(title, imageUrl) {
+function createCard(title: string, imageUrl: string) {
+
+    let life = "100%"
+
+
+
     const card = document.createElement("div");
     card.classList.add("card");
     cards.appendChild(card);
@@ -46,26 +57,45 @@ function createCard(title, imageUrl) {
     cardTitle.innerHTML = cardTitle.innerHTML + title
     cardBody.appendChild(cardTitle);
 
-    const cardButton = document.createElement("button");
-    cardButton.classList.add("card-button");
-    cardButton.innerHTML = cardButton.innerHTML + "Adopt Now"
+    const cardButton = document.createElement("div");
+    cardButton.classList.add("container");
     cardBody.appendChild(cardButton);
 
+    const cardLife: any = document.createElement("div");
+    cardLife.innerHTML = life;
+    cardLife.classList.add("life");
+    cardLife.style.width = life + "%";
+    cardButton.appendChild(cardLife);
+
+    document.getElementById('fight')!.onclick = function () {
+        let life = Math.floor(Math.random() * 101)!;
+        cardLife.innerHTML = life;
+        cardLife.style.width = life + "%";
+    };
 
 
-    // Step1: Create the cardBody div, add the class card-body and add it to the card
-
-    // Step2: Create the cardTitle h2, add the class card-title,
-    // set the text inside the tag to the "title" parameter of this function
-    // and add it to the cardBody
-
-    // Step3: Create the cardButton button, add the class card-button,
-    // set the text inside the tag to be "Adopt Now"
-    // and add it to the cardBody
 }
 
-/* Step 4: Create a for loop, for each element of the array, 
- call the function createCard with the corresponding parameter */
-animalsToAdopt.forEach(animalsToAdopt => {
-    createCard(animalsToAdopt.name, animalsToAdopt.picture)
+MyPokemon.forEach(MyPokemon => {
+
+    createCard(MyPokemon.name, MyPokemon.picture)
+
 })
+
+
+
+
+// document.getElementById('fight')!.onclick = function () {
+
+//     MyPokemon.forEach(MyPokemon => {
+//         modif(MyPokemon.life)
+//     })
+// };
+
+
+
+// function modif(vie) {
+//     vie = Math.floor(Math.random() * 101)!;
+//     document.querySelector('.life')!.textContent = vie;
+
+// }

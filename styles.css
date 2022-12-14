@@ -1,11 +1,13 @@
 * {
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 body {
     padding: 0;
     margin: 0;
     font-family: roboto, sans-serif;
+    background-image: url("https://www.wallpaperflare.com/static/905/635/699/pok%C3%A9mon-video-games-retro-games-pokemon-wallpaper.jpg");
 }
 
 h1 {
@@ -17,7 +19,7 @@ header {
     display: flex;
     padding: 20px;
     align-items: center;
-    background-color: coral;
+    background-color: rgb(241, 59, 59);
     height: 100px;
     width: 100%;
 }
@@ -27,6 +29,8 @@ header {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
+
 }
 
 .card {
@@ -36,6 +40,7 @@ header {
     display: flex;
     flex-direction: column;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: #000000aa;
 }
 
 .card-img {
@@ -49,6 +54,7 @@ header {
 
 .card-body {
     padding: 10px 20px;
+
 }
 
 .card-body h2 {
@@ -61,4 +67,28 @@ header {
     height: 50px;
     background-color: lightblue;
     width: 100%;
+}
+
+.container {
+    width: 100%;
+    background-color: rgb(255, 0, 0);
+
+}
+
+.life {
+    box-sizing: border-box;
+    text-align: right;
+    padding-right: 20px;
+    line-height: 40px;
+    color: white;
+    background-color: #4CAF50;
+}
+
+.btn {
+    background: wheat;
+    border-width: 5px;
+    padding: 2% 3%;
+    font-size: xx-large;
+    margin-left: 20%;
+    cursor: pointer;
 }
